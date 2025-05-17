@@ -19,8 +19,8 @@ def fetch_data() -> Response:
 
 @app.route('/dummy', methods=['GET'])
 def dummy() -> Response:
-    return 42
-
+    return jsonify({"value": 42})
+    
 def main() -> None:
     from gunicorn.app.wsgiapp import run
     sys.argv = ['gunicorn', '-w', '4', '-b', '[::]:3001', 'grafonix:app']
