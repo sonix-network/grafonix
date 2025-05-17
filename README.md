@@ -1,17 +1,14 @@
 # Grafonix
 
-Grafonix is a Grafana integration service for the SONIX project. This Flask application fetches and modifies JSON data from an external API, providing a simple interface for integration with Grafana.
+Grafonix is a Grafana integration service for the SONIX project.
 
-## Features
-
-- Fetches JSON data from an external API.
-- Modifies the data and returns it in a structured format.
-- Runs as a production-ready service using Gunicorn or uWSGI.
+This Flask application fetches and modifies JSON data from an external API,
+providing a simple interface for integration with Grafana.
 
 ## Prerequisites
 
-- Python 3.7 or higher
-- poetry
+- Python 3.9 or higher with virtualenv support
+- poetry for running tests locally
 
 ## Installation
 
@@ -27,6 +24,14 @@ Grafonix is a Grafana integration service for the SONIX project. This Flask appl
    ```bash
    ./run.sh
    ```
+
+## Deploying
+
+Using SONIX internal ansible, you can deploy changes like this:
+
+```
+./ansible/bin/ansible-playbook site.yml -l prometheus.local.sonix.network -t grafana
+```
 
 ## Running the Application
 
