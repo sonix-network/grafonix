@@ -1,13 +1,16 @@
 import pytest
+from typing import Iterator
+from flask.testing import FlaskClient
+from pytest_mock import MockFixture
 from grafonix import app
 
 @pytest.fixture
-def client():
+def client() -> Iterator[FlaskClient]:
     app.config['TESTING'] = True
     with app.test_client() as client:
         yield client
 
-def test_fetch_data(client, requests_mock):
+def test_fetch_data(client: FlaskClient, requests_mock: MockFixture) -> None:
     # Mock the external API response
     requests_mock.get('https://ipinfo.io', json={'key': 'value'})
 

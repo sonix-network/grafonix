@@ -1,22 +1,23 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, Response
+from typing import Dict, Any
 import requests
 import sys
 
-app = Flask(__name__)
+app: Flask = Flask(__name__)
 
 @app.route('/fetch-data', methods=['GET'])
-def fetch_data():
-    response = requests.get('https://ipinfo.io')
-    data = response.json()
+def fetch_data() -> Response:
+    response: requests.Response = requests.get('https://ipinfo.io')
+    data: Dict[str, Any] = response.json()
 
-    modified_data = {
+    modified_data: Dict[str, Any] = {
         'original': data,
         'message': 'Data fetched and modified successfully'
     }
 
     return jsonify(modified_data)
 
-def main():
+def main() -> None:
     from gunicorn.app.wsgiapp import run
     sys.argv = ['gunicorn', '-w', '4', '-b', '[::]:3001', 'grafonix:app']
     run()
