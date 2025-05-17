@@ -1,5 +1,8 @@
 # Grafonix
 
+[![Test](https://github.com/sonix-network/grafonix/actions/workflows/test.yml/badge.svg)](https://github.com/sonix-network/grafonix/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/sonix-network/grafonix/branch/main/graph/badge.svg)](https://codecov.io/gh/sonix-network/grafonix)
+
 Grafonix is a Grafana integration service for the SONIX project.
 
 This Flask application fetches and modifies JSON data from an external API,
