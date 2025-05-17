@@ -57,10 +57,10 @@ This will execute the tests located in the `tests` directory and provide you wit
 
 ```
 grafonix/
-├── app.py              # Main application file
-├── pyproject.toml      # Project configuration and dependencies
-├── tests/              # Directory containing unit tests
-│   └── test_app.py     # Unit tests for the application
+├── grafonix.py            # Main application file
+├── pyproject.toml         # Project configuration and dependencies
+├── tests/                 # Directory containing unit tests
+│   └── test_grafonix.py   # Unit tests for the application
 ```
 
 ## Contributing
