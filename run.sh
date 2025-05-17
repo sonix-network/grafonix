@@ -1,4 +1,8 @@
 #!/bin/sh
 
-echo I am running a dummy thing
-sleep 86400
+set -euo pipefail
+
+cd $(dirname $0)
+python3 -m venv venv
+./venv/bin/pip3 install .
+exec ./venv/bin/grafonix

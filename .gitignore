@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Virtual Environment
+venv/
+.env
+.venv/
+
+# IDE and Editor Files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Coverage reports
+.coverage
+coverage.xml
+htmlcov/
+
+# Pytest
+.cache/
+pytest_cache/
