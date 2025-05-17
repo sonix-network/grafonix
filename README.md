@@ -9,6 +9,7 @@ providing a simple interface for integration with Grafana.
 
 - Python 3.9 or higher with virtualenv support
 - poetry for running tests locally
+- mypy for type checking
 
 ## Installation
 
@@ -29,7 +30,7 @@ providing a simple interface for integration with Grafana.
 
 Using SONIX internal ansible, you can deploy changes like this:
 
-```
+```bash
 ./ansible/bin/ansible-playbook site.yml -l prometheus.local.sonix.network -t grafana
 ```
 
@@ -42,6 +43,16 @@ grafonix
 ```
 
 This will start the Flask application, listening on all IPv6 addresses (`::`) at port 3001.
+
+## Type Checking
+
+The codebase uses Python type hints to ensure type safety. To verify type correctness:
+
+```bash
+poetry run mypy --install-types grafonix.py tests/
+```
+
+This will check all Python files for type correctness. Make sure to run type checking before submitting any pull requests.
 
 ## Running Tests
 
